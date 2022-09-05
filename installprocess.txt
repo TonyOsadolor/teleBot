@@ -1,0 +1,11 @@
+composer require irazasyed/telegram-bot-sdk ^2.0 -W
+
+php artisan make:controller ChatBot --api
+
+Route::apiResource('chat', ChatBot::class);
+
+composer require guzzlehttp/guzzle:^7.0
+
+$client = new \GuzzleHttp\Client();
+
+php artisan vendor:publish --provider="Telegram\Bot\Laravel\TelegramServiceProvider"
